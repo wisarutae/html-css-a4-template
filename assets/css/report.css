@@ -1,19 +1,24 @@
 body {
   background: rgb(204, 204, 204);
 }
+.page-margin-top {
+  margin-top: 75px;
+}
 page {
   background: white;
   display: block;
   margin: 0 auto;
   margin-bottom: 0.5cm;
   box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
-  margin-top: 75px;
+  padding: 1.25cm;
+  page-break-after: always;
 }
 page[size="A4"] {
   width: 21cm;
   height: 29.7cm;
 }
 page[size="A4"][layout="landscape"] {
+  size: A4;
   width: 29.7cm;
   height: 21cm;
 }
@@ -34,14 +39,15 @@ page[size="A5"][layout="landscape"] {
   height: 14.8cm;
 }
 @media print {
-  nav {
+  nav,
+  .page-margin-top {
     display: none;
   }
+
   body,
   page {
-    background: none;
-    maring-top: 0px;
-    margin-bottom: 0cm;
+    margin: 0;
     box-shadow: none;
+    zoom: 130.1%;
   }
 }
